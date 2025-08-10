@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Human Speed and Light</title>
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+#container {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+#distance, #time {
+  margin: 10px 0;
+}
+#speed {
+  font-weight: bold;
+}
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+  <h1>Human Speed and Light Bulb Experiment</h1>
+
+  <div id="distance">
+    Distance: <input type="number" id="distanceInput" value="10"> meters
+  </div>
+  <div id="time">
+    Time: <input type="number" id="timeInput" value="5"> seconds
+  </div>
+  <button onclick="calculateSpeed()">Calculate Speed</button>
+  <div id="speed">
+    Speed: <span id="speedValue">0</span> m/s
+  </div>
+
+  <h2>Light Bulb Connection</h2>
+  <p>This section illustrates the concept. No actual light bulb connection is implemented here.</p>
+  <p>The idea is to imagine a scenario where the runner's motion is somehow used to generate or control a light signal. This could be a symbolic representation.</p>
+  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='yellow' /></svg>" alt="Light Bulb">
+
+  <div id="light-bulb-representation">
+    </div>
+</div>
+
+<script>
+function calculateSpeed() {
+  const distance = parseFloat(document.getElementById("distanceInput").value);
+  const time = parseFloat(document.getElementById("timeInput").value);
+
+  if (isNaN(distance) || isNaN(time) || time <= 0) {
+    document.getElementById("speedValue").textContent = "Invalid input";
+    return;
+  }
+
+  const speed = distance / time;
+  document.getElementById("speedValue").textContent = speed.toFixed(2);
+}
+</script>
+
+</body>
+</html>
